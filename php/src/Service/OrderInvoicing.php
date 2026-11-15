@@ -128,7 +128,7 @@ final class OrderInvoicing
         }
 
         if ((int) ($order['invoice_attempts'] ?? 0) >= self::MAX_ATTEMPTS) {
-            return self::result('failed', error: 'Zu viele Fehlversuche — Rechnung wird nicht erneut versucht.');
+            return self::result('failed', error: 'Zu viele Fehlversuche: Rechnung wird nicht erneut versucht.');
         }
 
         $client = $this->client();

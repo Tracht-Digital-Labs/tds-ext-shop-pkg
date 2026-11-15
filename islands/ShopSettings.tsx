@@ -130,7 +130,7 @@ export default function ShopSettings() {
 
       <Alert tone="info">
         Ohne diese drei Angaben ist der Angebotsabgleich aus. Der Katalog
-        funktioniert trotzdem — Affiliate-Links sind nicht die API. Nur Preise
+        funktioniert trotzdem: Affiliate-Links sind nicht die API. Nur Preise
         verschwinden dann nach 24 Stunden von selbst aus der Anzeige, weil sie
         laut Lizenz nicht länger gezeigt werden dürfen.
       </Alert>
@@ -183,7 +183,7 @@ export default function ShopSettings() {
       <h3>Stripe</h3>
       <Alert tone="info">
         Für den Verkauf eigener Leistungen. Der Secret Key ist nur nötig, wenn
-        der Shop ein eigenes Stripe-Konto nutzen soll — sonst gilt das zentrale
+        der Shop ein eigenes Stripe-Konto nutzen soll, sonst gilt das zentrale
         Konto unter Einstellungen → Zahlungen (Stripe). Das Webhook-Secret ist
         kein Nice-to-have: fehlt es, weist der Webhook <strong>jede</strong>{" "}
         Anfrage ab, statt irgendeinen POST als Zahlung zu akzeptieren.
@@ -271,7 +271,7 @@ export default function ShopSettings() {
       <Alert tone="warning">
         Noch nicht angeschlossen. Wero läuft über einen Zahlungsdienstleister,
         und solange hier keiner eingetragen ist, erscheint die Zahlungsart in
-        der Kasse überhaupt nicht — sie lässt sich also nicht versehentlich
+        der Kasse überhaupt nicht, sie lässt sich also nicht versehentlich
         anbieten. Was zum Fertigstellen fehlt, steht in{" "}
         <code>docs/wero-adapter.md</code>.
       </Alert>
@@ -317,7 +317,7 @@ export default function ShopSettings() {
       <Alert tone="info">
         Gilt nur für Bestellungen mit körperlicher Ware; ein Warenkorb aus
         reinen Leistungen wird nie mit Versand belastet und fragt auch keine
-        Lieferanschrift ab. Beträge in <strong>Cent</strong>, netto — die Steuer
+        Lieferanschrift ab. Beträge in <strong>Cent</strong>, netto, die Steuer
         kommt oben drauf, und zwar mit dem Satz der gelieferten Ware, bei
         gemischten Sätzen anteilig aufgeteilt (Abschn. 3.10 UStAE). 0 als
         Pauschale heißt versandkostenfrei.

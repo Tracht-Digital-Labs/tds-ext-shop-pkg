@@ -117,7 +117,7 @@ export default function OrderList() {
       {open > 0 ? (
         <Alert tone="warning">
           {open} bezahlte {open === 1 ? "Bestellung wartet" : "Bestellungen warten"} auf
-          Erbringung. Diese Produkte sind Leistungen — es wird nichts automatisch
+          Erbringung. Diese Produkte sind Leistungen, es wird nichts automatisch
           ausgeliefert.
         </Alert>
       ) : null}

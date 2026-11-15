@@ -214,7 +214,7 @@ export default function ProductList() {
       setCreating(false);
       await load();
     } catch {
-      toast.danger("Speichern fehlgeschlagen — keine Verbindung zur API.");
+      toast.danger("Speichern fehlgeschlagen, keine Verbindung zur API.");
     } finally {
       setSaving(false);
     }
@@ -324,14 +324,14 @@ export default function ProductList() {
       const published = json.published?.length ?? 0;
       if (published > 0 && json.cached === false) toast.warning("Freigabe gespeichert, aber der öffentliche Shop wurde noch nicht aktualisiert. Bitte den Seiten-Cache in den TDShop-Einstellungen prüfen und neu aufbauen.");
       if (refused > 0) {
-        toast.warning(`${published} freigegeben, ${refused} noch unvollständig — Gründe stehen in der Liste.`);
+        toast.warning(`${published} freigegeben, ${refused} noch unvollständig: Gründe stehen in der Liste.`);
       } else {
         toast.success(`${published} Produkte freigegeben.`);
       }
       setSelected(new Set());
       await load();
     } catch {
-      toast.danger("Freigabe fehlgeschlagen — keine Verbindung zur API.");
+      toast.danger("Freigabe fehlgeschlagen, keine Verbindung zur API.");
     } finally {
       setPublishing(null);
     }
@@ -452,7 +452,7 @@ export default function ProductList() {
               />
               <small>
                 Seitentitel: {pageTitle.length} Zeichen
-                {pageTitle.length > TITLE_MAX ? ` — höchstens ${TITLE_MAX}, bitte kürzen.` : "."}
+                {pageTitle.length > TITLE_MAX ? `, höchstens ${TITLE_MAX}, bitte kürzen.` : "."}
               </small>
             </label>
             <label>
@@ -464,7 +464,7 @@ export default function ProductList() {
               />
               {/* 80–160 is the range that survives a search result intact. The
                   publish action enforces it, so the hint here matches the rule. */}
-              <small>{form.metaDescription.length} Zeichen — nötig sind 80 bis 160.</small>
+              <small>{form.metaDescription.length} Zeichen, nötig sind 80 bis 160.</small>
             </label>
           </div>
 
@@ -545,7 +545,7 @@ export default function ProductList() {
               >
                 <option value="none">Kein eigener Text</option>
                 <option value="stub">Notiz</option>
-                <option value="published">Eigener Text — wird indexiert</option>
+                <option value="published">Eigener Text, wird indexiert</option>
               </select>
             </label>
           </div>
@@ -714,7 +714,7 @@ export default function ProductList() {
                           className="btn btn-primary"
                           disabled={busy || product.ready === false}
                           aria-busy={busy}
-                          title={product.ready === false ? "Erst vervollständigen — siehe Bereitschaft." : undefined}
+                          title={product.ready === false ? "Erst vervollständigen, siehe Bereitschaft." : undefined}
                           onClick={() => void setLive(product, true)}
                         >
                           Freigeben

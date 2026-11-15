@@ -52,7 +52,7 @@ export default function SyncBody() {
       if (!res.ok) throw new Error(String(res.status));
       const result = (await res.json()) as { ok: number; failed: number; stopped: string | null };
       if (result.stopped === "revoked") {
-        toast.danger("Amazon lehnt den Zugang weiterhin ab — Zugangsdaten und Partnerprogramm prüfen.");
+        toast.danger("Amazon lehnt den Zugang weiterhin ab: Zugangsdaten und Partnerprogramm prüfen.");
       } else {
         toast.success(`${result.ok} Angebote aktualisiert, ${result.failed} fehlgeschlagen.`);
       }

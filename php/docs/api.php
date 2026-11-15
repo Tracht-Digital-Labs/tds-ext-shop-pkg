@@ -43,7 +43,7 @@ return [
             ['name' => 'tag', 'in' => 'query', 'description' => 'Auf ein Schlagwort einschränken.'],
         ],
         'responses' => [
-            ['status' => 200, 'description' => '`{products: [...], nextCursor: string|null}` — '
+            ['status' => 200, 'description' => '`{products: [...], nextCursor: string|null}`: '
                 . 'auch bei einem Datenbankfehler, dann leer statt 500.'],
         ],
     ],
@@ -54,7 +54,7 @@ return [
         'auth' => 'public',
         'tag' => 'Katalog',
         'params' => [['name' => 'lang', 'in' => 'query', 'description' => '`de` oder `en`.']],
-        'responses' => [['status' => 200, 'description' => '`{categories: [{category, label, total}]}` — '
+        'responses' => [['status' => 200, 'description' => '`{categories: [{category, label, total}]}`: '
             . '`label` ist der gepflegte Name in `lang`, sonst der deutsche, sonst der Slug mit großem '
             . 'Anfangsbuchstaben. Produkte tragen denselben Namen als `categoryLabel`.']],
     ],
@@ -80,7 +80,7 @@ return [
         'method' => 'GET',
         'pattern' => '/content/shop/placement/{key:[a-z0-9-]+}',
         'summary' => 'Einen Werbeplatz auflösen',
-        'description' => 'Die EINE Quelle für alle drei Platzierungsmechanismen — manuell '
+        'description' => 'Die EINE Quelle für alle drei Platzierungsmechanismen, manuell '
             . 'bestückt, automatisch nach Kategorie/Schlagwort, oder fester Slot. Der '
             . 'Aufrufer erfährt nicht, welche Strategie geantwortet hat; die redaktionelle '
             . 'Entscheidung bleibt dadurch im Panel statt in drei Frontends. Ein '
@@ -93,7 +93,7 @@ return [
             ['name' => 'category', 'in' => 'query', 'description' => 'Kontext der aufrufenden Seite; '
                 . 'schlägt den Selektor der Platzierung, weil er das genauere Signal ist.'],
         ],
-        'responses' => [['status' => 200, 'description' => '`{key, heading, label, products}` — '
+        'responses' => [['status' => 200, 'description' => '`{key, heading, label, products}`: '
             . '`label` ist die Werbekennzeichnung und wird mitgeliefert, damit sie keine '
             . 'der drei Oberflächen vergessen kann.']],
     ],
@@ -102,7 +102,7 @@ return [
         'pattern' => '/content/shop/offer/{id:[0-9]+}/target',
         'summary' => 'Ziel eines Affiliate-Angebots auflösen und Klick zählen',
         'description' => 'Wird von der `/go/{id}`-Route der Shop-Site aufgerufen. Der Umweg '
-            . 'hält den Partner-Tag an genau einer Stelle — direkt gesetzte Links würden ihn '
+            . 'hält den Partner-Tag an genau einer Stelle, direkt gesetzte Links würden ihn '
             . 'in jedem Artikel und jeder Produktzeile einbacken. Gezählt wird pro Tag '
             . 'aggregiert: keine IP, kein Cookie, keine Benutzer-ID.',
         'auth' => 'public',
@@ -114,7 +114,7 @@ return [
             ['name' => 'lang', 'in' => 'query', 'description' => '`de` oder `en`.'],
         ],
         'responses' => [
-            ['status' => 200, 'description' => '`{url}` — das Weiterleitungsziel.'],
+            ['status' => 200, 'description' => '`{url}`, das Weiterleitungsziel.'],
             ['status' => 404, 'description' => 'Angebot unbekannt oder Produkt nicht veröffentlicht.'],
         ],
     ],
@@ -124,7 +124,7 @@ return [
         'method' => 'GET',
         'pattern' => '/shop/summary',
         'summary' => 'Kennzahlen für das Dashboard-Widget',
-        'description' => '`unwritten` zählt Produkte ohne eigenen Einschätzungstext — die '
+        'description' => '`unwritten` zählt Produkte ohne eigenen Einschätzungstext, die '
             . 'Zahl, die darüber entscheidet, ob der Katalog als Fachbeitrag oder als '
             . 'Linksammlung gelesen wird. `stalePrices` zählt Angebote, deren Kurs älter '
             . 'als 24 Stunden ist und deshalb nicht mehr angezeigt wird.',
@@ -151,7 +151,7 @@ return [
         'summary' => 'Ein Produkt für den Editor',
         'description' => 'Liefert die ROHEN Angebotszeilen mit echten Preisen und Zeitstempeln, '
             . 'nicht die auf Frische geprüfte öffentliche Form. Ein Redakteur muss sehen '
-            . 'können, dass ein Preis existiert, aber zu alt zum Anzeigen ist — genau das '
+            . 'können, dass ein Preis existiert, aber zu alt zum Anzeigen ist, genau das '
             . 'ist der Zustand, den er beheben soll.',
         'auth' => 'permission',
         'permission' => 'shop:read',
@@ -167,7 +167,7 @@ return [
         'pattern' => '/shop/products',
         'summary' => 'Produkt anlegen',
         'description' => '`published_at` wird beim ersten Wechsel auf `published` gesetzt und '
-            . 'danach nie mehr verschoben — sonst würde eine Tippfehlerkorrektur den Katalog '
+            . 'danach nie mehr verschoben, sonst würde eine Tippfehlerkorrektur den Katalog '
             . 'umsortieren und die `lastmod` der Sitemap neu schreiben.',
         'auth' => 'permission',
         'permission' => 'shop:write',
@@ -177,7 +177,7 @@ return [
             ['name' => 'slug', 'in' => 'body', 'description' => 'Kleinbuchstaben, Ziffern, Bindestriche.'],
             ['name' => 'title', 'in' => 'body', 'description' => 'Pflicht.'],
             ['name' => 'status', 'in' => 'body', 'description' => '`draft`, `published` oder `archived`.'],
-            ['name' => 'editorialStatus', 'in' => 'body', 'description' => '`none`, `stub` oder `published` — '
+            ['name' => 'editorialStatus', 'in' => 'body', 'description' => '`none`, `stub` oder `published`: '
                 . 'nur `published` kommt in die Sitemap und wird indexiert.'],
         ],
         'responses' => [
@@ -222,7 +222,7 @@ return [
         'pattern' => '/shop/products/{id:[0-9]+}/offers',
         'summary' => 'Angebote eines Produkts ersetzen',
         'description' => 'Ein von Hand eingetragener AFFILIATE-Preis bekommt bewusst KEINEN '
-            . 'Zeitstempel und wird deshalb nicht angezeigt, bis der Abgleich ihn bestätigt — '
+            . 'Zeitstempel und wird deshalb nicht angezeigt, bis der Abgleich ihn bestätigt: '
             . 'die Lizenz verlangt einen Preis aus der API. Ein eigener Preis ist unser eigener '
             . 'und gilt sofort.',
         'auth' => 'permission',
@@ -248,7 +248,7 @@ return [
         'params' => [['name' => 'id', 'in' => 'path', 'description' => 'Produkt-ID.']],
         'responses' => [
             ['status' => 200, 'description' => '`{ok: true}`'],
-            ['status' => 422, 'description' => '`{error, problems: [{code, message}]}` — was noch fehlt.'],
+            ['status' => 422, 'description' => '`{error, problems: [{code, message}]}`, was noch fehlt.'],
             ['status' => 404, 'description' => 'Produkt unbekannt.'],
         ],
     ],
@@ -293,7 +293,7 @@ return [
         'pattern' => '/shop/placements/{key:[a-z0-9-]+}',
         'summary' => 'Einen Werbeplatz bearbeiten',
         'description' => '`productIds` ersetzt die manuelle Bestückung vollständig und in '
-            . 'der übergebenen Reihenfolge — in einer Transaktion, weil eine halb '
+            . 'der übergebenen Reihenfolge, in einer Transaktion, weil eine halb '
             . 'angewandte Umsortierung schlimmer ist als eine abgelehnte.',
         'auth' => 'permission',
         'permission' => 'shop:write',
@@ -314,7 +314,7 @@ return [
         'pattern' => '/shop/quote',
         'summary' => 'Warenkorb bepreisen, ohne zu bestellen',
         'description' => 'Die Warenkorbseite braucht die Summe, die gleich abgebucht wird, und '
-            . 'darin stecken die Versandkosten — abhaengig vom Inhalt, von der '
+            . 'darin stecken die Versandkosten, abhaengig vom Inhalt, von der '
             . 'Versandkostenfreigrenze und von einer Aufteilung der Steuer auf die Steuersaetze '
             . 'der Ware. Das laesst sich im Browser aus dem Katalog nicht berechnen, und ein '
             . 'Warenkorb, der eine andere Zahl zeigt als die Kasse, ist schlimmer als einer, der '
@@ -340,12 +340,12 @@ return [
         'pattern' => '/shop/checkout',
         'summary' => 'Zahlung starten (Anbieter waehlbar)',
         'description' => 'Vom Browser des Besuchers aufgerufen, deshalb NICHT site-key-'
-            . 'geschuetzt. Der Preis wird aus der Datenbank gelesen, nie aus der Anfrage — ein '
+            . 'geschuetzt. Der Preis wird aus der Datenbank gelesen, nie aus der Anfrage, ein '
             . 'gesendeter Preis ist ein Preis, den der Kunde gewaehlt hat. Zwei Ablehnungen sind '
             . 'keine Formalitaeten: ohne Widerrufsbestaetigung (§ 356 Abs. 4 BGB) erlischt das '
             . 'Widerrufsrecht nicht, und ausserhalb der erlaubten Laender entstuende eine '
             . 'OSS-Pflicht (§ 3a Abs. 5 UStG). Der Bestellknopf mit "Zahlungspflichtig '
-            . 'bestellen" steht auf UNSERER Seite (§ 312j Abs. 3 BGB) — der Anbieter ist nur der '
+            . 'bestellen" steht auf UNSERER Seite (§ 312j Abs. 3 BGB), der Anbieter ist nur der '
             . 'Zahlungsschritt danach. `provider` waehlt zwischen den konfigurierten Anbietern; '
             . 'ein nicht konfigurierter wird mit 503 abgewiesen, auch wenn er registriert ist.',
         'auth' => 'public',
@@ -367,7 +367,7 @@ return [
                 . 'dich empfohlen?“; wird zur Nennung, die der Betreiber zuordnet.'],
         ],
         'responses' => [
-            ['status' => 200, 'description' => '`{url, token}` — `url` fuehrt zum Anbieter.'],
+            ['status' => 200, 'description' => '`{url, token}`: `url` fuehrt zum Anbieter.'],
             ['status' => 404, 'description' => 'Kein verkaeufliches Angebot unter diesem Slug.'],
             ['status' => 422, 'description' => 'E-Mail, Widerrufsbestaetigung oder Land.'],
             ['status' => 502, 'description' => 'Der Anbieter hat die Zahlung abgelehnt.'],
@@ -386,7 +386,7 @@ return [
         'tag' => 'Kauf',
         'params' => [['name' => 'code', 'in' => 'path', 'description' => 'Partnercode, Gross-/Kleinschreibung egal.']],
         'responses' => [
-            ['status' => 200, 'description' => '`{code, name}` — `code` in kanonischer Schreibweise.'],
+            ['status' => 200, 'description' => '`{code, name}`: `code` in kanonischer Schreibweise.'],
             ['status' => 404, 'description' => 'Kein aktiver Partner mit diesem Code.'],
         ],
     ],
@@ -395,7 +395,7 @@ return [
         'pattern' => '/shop/payment-methods',
         'summary' => 'Verfuegbare Zahlungsarten',
         'description' => 'Was der Shop gerade wirklich abschliessen kann, in Anzeigereihenfolge. '
-            . 'Die Kasse rendert diese Liste statt einer fest verdrahteten — das ist der Grund, '
+            . 'Die Kasse rendert diese Liste statt einer fest verdrahteten, das ist der Grund, '
             . 'warum ein unfertiger Adapter ungefaehrlich im Baum liegen kann: Wero ist '
             . 'registriert, meldet aber `isConfigured() === false` und taucht deshalb hier nicht '
             . 'auf. Sobald ein PSP hinterlegt ist, erscheint es ohne Frontend-Aenderung.',
@@ -403,7 +403,7 @@ return [
         'tag' => 'Kauf',
         'params' => [],
         'responses' => [
-            ['status' => 200, 'description' => '`{methods: [{id, label}]}` — moeglicherweise leer.'],
+            ['status' => 200, 'description' => '`{methods: [{id, label}]}`, moeglicherweise leer.'],
         ],
     ],
     [
@@ -411,14 +411,14 @@ return [
         'pattern' => '/shop/payment/{provider:[a-z]+}/webhook',
         'summary' => 'Zahlungs-Webhook (signaturgeprueft)',
         'description' => 'Bewusst AUSSERHALB von `/content/shop`: kein Anbieter kennt einen '
-            . 'Site-Key, und SiteKeyMiddleware vergleicht segmentweise — unter dem Praefix wuerde '
+            . 'Site-Key, und SiteKeyMiddleware vergleicht segmentweise, unter dem Praefix wuerde '
             . 'jeder Aufruf abgewiesen. Jeder Anbieter prueft sein EIGENES Verfahren: Stripe eine '
             . 'HMAC ueber den rohen Body, PayPal ueber einen Rueckruf an seinen '
             . 'Verifikationsendpunkt. Der rohe Body wird unveraendert durchgereicht, sonst '
             . 'verifiziert Stripe nicht. `markPaid()` ist ueber seine WHERE-Klausel idempotent, '
             . 'weil jeder Anbieter bis zu einer 2xx-Antwort wiederholt. Ein verifiziertes, aber '
             . 'nicht behandeltes Ereignis wird ebenfalls mit 200 quittiert. Bei PayPal wird auf '
-            . '`CHECKOUT.ORDER.APPROVED` hin abgebucht — eine Freigabe ist noch kein Geld.',
+            . '`CHECKOUT.ORDER.APPROVED` hin abgebucht, eine Freigabe ist noch kein Geld.',
         'auth' => 'token',
         'tag' => 'Kauf',
         'params' => [
@@ -429,10 +429,10 @@ return [
         ],
         'responses' => [
             ['status' => 200, 'description' => '`{received: true}`'],
-            ['status' => 400, 'description' => 'Signatur ungueltig — ohne Begruendung.'],
+            ['status' => 400, 'description' => 'Signatur ungueltig, ohne Begruendung.'],
             ['status' => 404, 'description' => 'Unbekannter Anbieter.'],
             ['status' => 502, 'description' => 'Folgeaufruf beim Anbieter fehlgeschlagen (Capture).'],
-            ['status' => 503, 'description' => 'Kein Webhook-Secret konfiguriert — faellt bewusst zu.'],
+            ['status' => 503, 'description' => 'Kein Webhook-Secret konfiguriert, faellt bewusst zu.'],
         ],
     ],
     [
@@ -442,7 +442,7 @@ return [
         'description' => 'Dieselbe Behandlung wie `/shop/payment/stripe/webhook`. Bleibt '
             . 'bestehen, weil diese Adresse im Stripe-Dashboard hinterlegt ist und dort '
             . 'Live-Ereignisse empfaengt: eine Route umzubenennen, die ein Dritter aufruft, ist '
-            . 'ein Weg, Zahlungen still zu verlieren — Stripe wiederholt drei Tage lang gegen '
+            . 'ein Weg, Zahlungen still zu verlieren: Stripe wiederholt drei Tage lang gegen '
             . 'einen 404 und gibt dann auf. Faellt weg, sobald das Dashboard umgestellt und die '
             . 'Protokolle ruhig sind.',
         'auth' => 'token',
@@ -460,7 +460,7 @@ return [
         'method' => 'GET',
         'pattern' => '/shop/order/{token:[a-f0-9]{32}}',
         'summary' => 'Eigene Bestellung ansehen',
-        'description' => 'Das Token IST die Berechtigung — Gastkauf ohne Konto. Stripe-IDs und '
+        'description' => 'Das Token IST die Berechtigung: Gastkauf ohne Konto. Stripe-IDs und '
             . 'interne Notizen werden aus der Antwort entfernt.',
         'auth' => 'public',
         'tag' => 'Kauf',
@@ -483,7 +483,7 @@ return [
         'method' => 'POST',
         'pattern' => '/shop/orders/{id:[0-9]+}/fulfil',
         'summary' => 'Bestellung als erbracht markieren',
-        'description' => 'Diese Produkte sind LEISTUNGEN, keine Downloads — es gibt keine Datei '
+        'description' => 'Diese Produkte sind LEISTUNGEN, keine Downloads, es gibt keine Datei '
             . 'auszuliefern. Erbracht wird von Hand, und dieser Aufruf haelt fest, wann.',
         'auth' => 'permission',
         'permission' => 'shop:orders',
@@ -502,7 +502,7 @@ return [
         'pattern' => '/shop/orders/{id:[0-9]+}/invoice',
         'summary' => 'Rechnung ueber Lexware Office erstellen',
         'description' => 'Lexware ist das fuehrende System: es vergibt die Rechnungsnummer, '
-            . 'rendert das PDF und fuehrt das Archiv — hier wird nur festgehalten, was es '
+            . 'rendert das PDF und fuehrt das Archiv, hier wird nur festgehalten, was es '
             . 'entschieden hat. Der Zahlungs-Webhook ruft dasselbe automatisch auf, sobald eine '
             . 'Bestellung bezahlt ist; dieser Endpunkt existiert, weil der automatische Weg '
             . 'ausfallen kann. Mehrfachaufrufe sind unschaedlich: eine bereits fakturierte '
@@ -525,7 +525,7 @@ return [
         'method' => 'GET',
         'pattern' => '/shop/sync/status',
         'summary' => 'Zustand des Amazon-Abgleichs',
-        'description' => '`revoked: true` heisst, Amazon hat den API-Zugang entzogen — das '
+        'description' => '`revoked: true` heisst, Amazon hat den API-Zugang entzogen, das '
             . 'passiert, wenn qualifizierte Verkaeufe ausbleiben, und ist ein Zustand, den ein '
             . 'Mensch aufloesen muss, kein Fehler zum Wiederholen. Der Katalog laeuft weiter: '
             . 'die Affiliate-Links sind nicht die API, nur die Preise verschwinden binnen eines '
@@ -541,7 +541,7 @@ return [
         'summary' => 'Abgleich jetzt anstossen',
         'description' => 'Setzt einen gestoppten Abgleich fort, stellt veraltete Angebote in die '
             . 'Warteschlange und laeuft sofort einen Takt. Bewusst EIN Knopf: wer gerade sein '
-            . 'Amazon-Konto in Ordnung gebracht hat, will beides — zwei Knoepfe laden dazu ein, '
+            . 'Amazon-Konto in Ordnung gebracht hat, will beides, zwei Knoepfe laden dazu ein, '
             . 'nur den ersten zu druecken und den Abgleich fuer kaputt zu halten.',
         'auth' => 'permission',
         'permission' => 'shop:sync',
@@ -552,7 +552,7 @@ return [
         'method' => 'POST',
         'pattern' => '/shop/sync/tick',
         'summary' => 'Externer Anstoss (tokengeschuetzt)',
-        'description' => 'Fuer einen beliebigen externen Zeitgeber — Uptime-Monitor, '
+        'description' => 'Fuer einen beliebigen externen Zeitgeber: Uptime-Monitor, '
             . 'GitHub-Actions-`schedule`, Plesk-Aufgabe falls vorhanden. Ausdruecklich KEINE '
             . 'Betriebsvoraussetzung: der anfragegetriebene Takt haelt den Katalog aktuell, dies '
             . 'beschleunigt ihn nur. Ohne `SHOP_SYNC_TOKEN` antwortet die Route 503, statt '
@@ -572,7 +572,7 @@ return [
         'method' => 'POST',
         'pattern' => '/shop/affiliate/lookup',
         'summary' => 'Amazon-Produkt nachschlagen (ASIN oder Suchbegriff)',
-        'description' => 'Fuer den Import im Panel. Fehler werden hier NICHT geschluckt — der '
+        'description' => 'Fuer den Import im Panel. Fehler werden hier NICHT geschluckt, der '
             . 'Betreiber steht davor, und ein entzogener Zugang liest sich voellig anders als '
             . 'ein Tippfehler in einer ASIN.',
         'auth' => 'permission',
@@ -585,7 +585,7 @@ return [
         'responses' => [
             ['status' => 200, 'description' => '`{items: [...]}`'],
             ['status' => 422, 'description' => 'Weder ASIN noch Suchbegriff.'],
-            ['status' => 502, 'description' => 'Dauerhafter Fehler — Zugangsdaten oder entzogener Zugang.'],
+            ['status' => 502, 'description' => 'Dauerhafter Fehler: Zugangsdaten oder entzogener Zugang.'],
             ['status' => 503, 'description' => 'Amazon nicht konfiguriert oder voruebergehend nicht erreichbar.'],
         ],
     ],
@@ -606,7 +606,7 @@ return [
         'method' => 'PUT',
         'pattern' => '/shop/categories/{slug:[a-z0-9-]+}',
         'summary' => 'Den deutschen und englischen Namen einer Kategorie setzen',
-        'description' => 'Beide Namen leer entfernt den Eintrag — die Kategorie erscheint dann '
+        'description' => 'Beide Namen leer entfernt den Eintrag, die Kategorie erscheint dann '
             . 'wieder unter ihrem Slug mit großem Anfangsbuchstaben.',
         'auth' => 'permission',
         'permission' => 'shop:write',

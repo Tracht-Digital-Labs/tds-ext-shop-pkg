@@ -1510,7 +1510,7 @@ final class ShopModule extends AbstractModule implements ApiDocSource, SiteKeyPr
         // The readable name belongs in the category names, not in the slug.
         $category = (string) ($body['category'] ?? 'allgemein');
         if (!preg_match(\Tds\Ext\Shop\Support\CategoryName::SLUG_PATTERN, $category)) {
-            return 'Kategorie muss aus 2–60 Kleinbuchstaben, Ziffern und Bindestrichen bestehen — '
+            return 'Kategorie muss aus 2–60 Kleinbuchstaben, Ziffern und Bindestrichen bestehen: '
                 . 'sie steht in der Adresse des Shops. Den lesbaren Namen pflegst du unter „Kategorien“.';
         }
         return null;

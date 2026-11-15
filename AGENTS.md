@@ -34,6 +34,7 @@ composer install && composer test   # phpunit
 - Call the API with `apiFetch`. Toast methods must exist (`tests/islandToasts.test.ts`). Never mount a `ToastHost`.
 - Migrations: shop prefix, unsigned integer FKs. Stay in the `0.6.x` line; versions via the release workflow.
 - Going live is `POST /shop/products/{id}/publish`, gated by `Support\ProductReadiness`; a save never publishes.
+- Follows the TDS quality standard (`../tds-ops/standards/quality.md`): no AI slop, clean code.
 
 ## Topic files
 

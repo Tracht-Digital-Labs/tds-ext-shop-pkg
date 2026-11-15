@@ -101,7 +101,7 @@ export default function CategoryManager() {
       toast.success(`Kategorie „${slug}“ gespeichert.`);
       await load();
     } catch {
-      toast.danger("Speichern fehlgeschlagen — keine Verbindung zur API.");
+      toast.danger("Speichern fehlgeschlagen, keine Verbindung zur API.");
     } finally {
       setSaving(null);
     }
@@ -117,7 +117,7 @@ export default function CategoryManager() {
       <p>
         Der Slug steht in der Adresse des Shops. Die Namen sind, was Besucher lesen. Ohne englischen
         Namen zeigt die englische Seite den deutschen, ohne beide den Slug mit großem Anfangsbuchstaben.
-        Einleitung und häufige Fragen erscheinen oben auf der Kategorieseite — sichtbar und als
+        Einleitung und häufige Fragen erscheinen oben auf der Kategorieseite, sichtbar und als
         strukturierte Daten für Suchmaschinen.
       </p>
 
@@ -184,7 +184,7 @@ export default function CategoryManager() {
                     <details>
                       <summary>
                         Seitentext und häufige Fragen
-                        {draft.introDe.trim() === "" ? " — noch leer" : ""}
+                        {draft.introDe.trim() === "" ? ", noch leer" : ""}
                       </summary>
                       <div className="tds-stack">
                         <label>

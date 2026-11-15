@@ -95,7 +95,7 @@ export default function PlacementManager() {
       <Alert tone="info">
         Jede Platzierung wird als <strong>Anzeige</strong> gekennzeichnet. Die
         Kennzeichnung wird von der API mitgeliefert und lässt sich hier nicht
-        abschalten — sie ist eine Rechtspflicht, keine Einstellung.
+        abschalten, sie ist eine Rechtspflicht, keine Einstellung.
       </Alert>
 
       {placements.length === 0 ? (

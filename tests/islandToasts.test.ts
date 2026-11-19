@@ -2,7 +2,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { toast } from "@tracht-digital-solutions/tds-shared/toast";
+import { toast } from "@tracht-digital-labs/tds-shared/toast";
 
 /**
  * Nothing type-checks this package's islands: `tsconfig.json` and `tsup` cover

@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 
-import { apiFetch } from "@tracht-digital-solutions/tds-shared/api";
-import { ProductCard, SkeletonText } from "@tracht-digital-solutions/tds-shared/components";
+import { apiFetch } from "@tracht-digital-labs/tds-shared/api";
+import { ProductCard, SkeletonText } from "@tracht-digital-labs/tds-shared/components";
 import {
   emptyPlacement,
   type ShopOffer,
   type ShopPlacement,
   type ShopProductRef,
-} from "@tracht-digital-solutions/tds-shared/schemas";
+} from "@tracht-digital-labs/tds-shared/schemas";
 
 const PLACEMENT_KEY = "panel-dashboard";
 

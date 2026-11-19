@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-import { apiFetch, sendJson } from "@tracht-digital-solutions/tds-shared/api";
-import { Alert, ConfirmDialog, Spinner } from "@tracht-digital-solutions/tds-shared/components";
-import { Presence } from "@tracht-digital-solutions/tds-shared/motion/react";
-import { resolveChipVariant } from "@tracht-digital-solutions/tds-shared/design";
-import { toast } from "@tracht-digital-solutions/tds-shared/toast";
+import { apiFetch, sendJson } from "@tracht-digital-labs/tds-shared/api";
+import { Alert, ConfirmDialog, Spinner } from "@tracht-digital-labs/tds-shared/components";
+import { Presence } from "@tracht-digital-labs/tds-shared/motion/react";
+import { resolveChipVariant } from "@tracht-digital-labs/tds-shared/design";
+import { toast } from "@tracht-digital-labs/tds-shared/toast";
 
 import PairEditor, { parsePairs, type Pair } from "./PairEditor.tsx";
 

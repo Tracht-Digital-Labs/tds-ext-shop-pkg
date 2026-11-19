@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 
-import { apiFetch } from "@tracht-digital-solutions/tds-shared/api";
-import { Alert, Skeleton } from "@tracht-digital-solutions/tds-shared/components";
-import { toast } from "@tracht-digital-solutions/tds-shared/toast";
+import { apiFetch } from "@tracht-digital-labs/tds-shared/api";
+import { Alert, Skeleton } from "@tracht-digital-labs/tds-shared/components";
+import { toast } from "@tracht-digital-labs/tds-shared/toast";
 
 interface Status {
   queue: Record<string, number>;

@@ -5,7 +5,7 @@ digitalisation and technology products (affiliate offers and TDS's own digital
 service packages), and serves the placements that embed those products in the
 journal and the customer portal.
 
-One repository, two published packages: an npm package (`@tracht-digital-solutions/tds-ext-shop`)
+One repository, two published packages: an npm package (`@tracht-digital-labs/tds-ext-shop`)
 for the frontend manifest, pages, widgets and islands, and a Composer package
 (`tracht-digital-solutions/tds-ext-shop`) for the PHP `Module`. Versions move in
 lockstep; the git tag is the Composer ref.

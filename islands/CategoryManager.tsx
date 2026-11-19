@@ -1,8 +1,8 @@
 import { Fragment, useCallback, useEffect, useState } from "react";
 
-import { apiFetch, sendJson } from "@tracht-digital-solutions/tds-shared/api";
-import { Alert, Spinner } from "@tracht-digital-solutions/tds-shared/components";
-import { toast } from "@tracht-digital-solutions/tds-shared/toast";
+import { apiFetch, sendJson } from "@tracht-digital-labs/tds-shared/api";
+import { Alert, Spinner } from "@tracht-digital-labs/tds-shared/components";
+import { toast } from "@tracht-digital-labs/tds-shared/toast";
 
 import PairEditor, { parsePairs, type Pair } from "./PairEditor.tsx";
 

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
-import { apiFetch } from "@tracht-digital-solutions/tds-shared/api";
-import { secretHint, useRuntimeSettings } from "@tracht-digital-solutions/tds-shared/admin";
-import { Alert, Spinner } from "@tracht-digital-solutions/tds-shared/components";
-import { toast } from "@tracht-digital-solutions/tds-shared/toast";
+import { apiFetch } from "@tracht-digital-labs/tds-shared/api";
+import { secretHint, useRuntimeSettings } from "@tracht-digital-labs/tds-shared/admin";
+import { Alert, Spinner } from "@tracht-digital-labs/tds-shared/components";
+import { toast } from "@tracht-digital-labs/tds-shared/toast";
 
 /**
  * TDShop settings — the Amazon Product Advertising credentials.

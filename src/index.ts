@@ -1,4 +1,4 @@
-import { defineExtension } from "@tracht-digital-solutions/tds-frontend-contract";
+import { defineExtension } from "@tracht-digital-labs/tds-frontend-contract";
 
 /**
  * TDShop — the panel half of `shop.tracht-digital.de`.
@@ -49,7 +49,7 @@ export default defineExtension({
     {
       id: "shop-summary",
       title: "TDShop",
-      island: "@tracht-digital-solutions/tds-ext-shop/widgets/Widget.astro",
+      island: "@tracht-digital-labs/tds-ext-shop/widgets/Widget.astro",
       size: "sm",
       permission: "shop:read",
       dataEndpoint: "/shop/summary",
@@ -58,7 +58,7 @@ export default defineExtension({
     {
       id: "shop-sync",
       title: "Angebotsabgleich",
-      island: "@tracht-digital-solutions/tds-ext-shop/widgets/SyncWidget.astro",
+      island: "@tracht-digital-labs/tds-ext-shop/widgets/SyncWidget.astro",
       size: "sm",
       permission: "shop:sync",
       dataEndpoint: "/shop/sync/status",
@@ -68,7 +68,7 @@ export default defineExtension({
       // Deliberately ungated — see the class doc above.
       id: "shop-picks",
       title: "Empfehlungen",
-      island: "@tracht-digital-solutions/tds-ext-shop/widgets/PicksWidget.astro",
+      island: "@tracht-digital-labs/tds-ext-shop/widgets/PicksWidget.astro",
       size: "md",
       order: 90,
     },
@@ -77,24 +77,24 @@ export default defineExtension({
     {
       id: "shop",
       label: "TDShop",
-      island: "@tracht-digital-solutions/tds-ext-shop/islands/Settings.astro",
+      island: "@tracht-digital-labs/tds-ext-shop/islands/Settings.astro",
       order: 55,
     },
   ],
   routes: [
     {
       pattern: "/shop",
-      entrypoint: "@tracht-digital-solutions/tds-ext-shop/pages/Index.astro",
+      entrypoint: "@tracht-digital-labs/tds-ext-shop/pages/Index.astro",
       permission: "shop:read",
     },
     {
       pattern: "/shop/platzierungen",
-      entrypoint: "@tracht-digital-solutions/tds-ext-shop/pages/Placements.astro",
+      entrypoint: "@tracht-digital-labs/tds-ext-shop/pages/Placements.astro",
       permission: "shop:write",
     },
     {
       pattern: "/shop/bestellungen",
-      entrypoint: "@tracht-digital-solutions/tds-ext-shop/pages/Orders.astro",
+      entrypoint: "@tracht-digital-labs/tds-ext-shop/pages/Orders.astro",
       permission: "shop:orders",
     },
   ],
